@@ -4,7 +4,6 @@ namespace Capetown\Commands\Giphy;
 
 use Capetown\Core\CommandInterface;
 use Capetown\Core\KeybaseAPIClient;
-use Dotenv\Dotenv;
 
 class GiphyCommand implements CommandInterface {
 	
@@ -23,9 +22,6 @@ class GiphyCommand implements CommandInterface {
 	}
 	
 	public static function createDefault(KeybaseAPIClient $keybaseAPIClient): CommandInterface {
-		$dotenv = new Dotenv(__DIR__);
-		$dotenv->load();
-		
 		return new self($keybaseAPIClient, new GiphyAPIClient(getenv('GIPHY_API_KEY')));
 	}
 	

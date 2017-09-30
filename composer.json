@@ -12,8 +12,7 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "capetown/core": "dev-master",
-    "vlucas/phpdotenv": "^2.4"
+    "capetown/core": "dev-master"
   },
   "autoload": {
     "psr-4": {
