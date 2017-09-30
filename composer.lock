@@ -4,24 +4,32 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1d0e622591fccd0d3ff7d4abd9ed7b31",
-    "content-hash": "6f803b3a09435303866048c63ab251db",
+    "hash": "41f0da054e9204f24deaff17b3f9f098",
+    "content-hash": "0b43177a23692ebbb788cabfe2f2f445",
     "packages": [
         {
             "name": "capetown/core",
-            "version": "dev-master",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tstrijdhorst/capetown-core.git",
-                "reference": "015de3a5848adb252564adf63758321d325d0db2"
+                "reference": "ca26b518cc48c8d8d4d54997d5de11d1f44bfe3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tstrijdhorst/capetown-core/zipball/015de3a5848adb252564adf63758321d325d0db2",
-                "reference": "015de3a5848adb252564adf63758321d325d0db2",
+                "url": "https://api.github.com/repos/tstrijdhorst/capetown-core/zipball/ca26b518cc48c8d8d4d54997d5de11d1f44bfe3b",
+                "reference": "ca26b518cc48c8d8d4d54997d5de11d1f44bfe3b",
                 "shasum": ""
             },
+            "require": {
+                "react/event-loop": "^0.4.3"
+            },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Capetown\\Core\\": "src/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -33,65 +41,55 @@
                 }
             ],
             "description": "Capetown Core Library",
-            "time": "2017-09-30 15:59:20"
+            "time": "2017-09-30 17:45:30"
         },
         {
-            "name": "vlucas/phpdotenv",
-            "version": "v2.4.0",
+            "name": "react/event-loop",
+            "version": "v0.4.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c"
+                "url": "https://github.com/reactphp/event-loop.git",
+                "reference": "8bde03488ee897dc6bb3d91e4e17c353f9c5252f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/8bde03488ee897dc6bb3d91e4e17c353f9c5252f",
+                "reference": "8bde03488ee897dc6bb3d91e4e17c353f9c5252f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9"
+                "php": ">=5.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8 || ^5.0"
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-event": "~1.0",
+                "ext-libev": "*",
+                "ext-libevent": ">=0.1.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.4-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
-                    "Dotenv\\": "src/"
+                    "React\\EventLoop\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause-Attribution"
+                "MIT"
             ],
-            "authors": [
-                {
-                    "name": "Vance Lucas",
-                    "email": "vance@vancelucas.com",
-                    "homepage": "http://www.vancelucas.com"
-                }
-            ],
-            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "description": "Event loop abstraction layer that libraries can use for evented I/O.",
             "keywords": [
-                "dotenv",
-                "env",
-                "environment"
+                "asynchronous",
+                "event-loop"
             ],
-            "time": "2016-09-01 10:05:43"
+            "time": "2017-04-27 10:56:23"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "capetown/core": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
