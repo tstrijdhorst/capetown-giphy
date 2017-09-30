@@ -1,6 +1,7 @@
 {
-  "name": "timstrijdhorst/capetown-giphy-command",
+  "name": "capetown/giphy-command",
   "description": "Giphy Command for Capetown Keybase.io Bot Framework",
+  "homepage": "https://github.com/tstrijdhorst/capetown-giphy",
   "type": "plugin",
   "license": "MIT",
   "authors": [
@@ -10,7 +11,7 @@
     }
   ],
   "require": {
-    "timstrijdhorst/capetown": "*",
+    "capetown/capetown": "dev-master",
     "vlucas/phpdotenv": "^2.4"
   },
   "autoload": {
