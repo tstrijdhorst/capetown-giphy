@@ -31,17 +31,14 @@ class GiphyCommand implements CommandInterface {
 	}
 	
 	public function handleMessage(Message $message): void {
-		if (substr($message->getBody(), 0, 7) === '/giphy ') {
-			$searchQuery = substr($message->getBody(), 7);
-			
-			try {
-				$randomGifPath = $this->giphyAPIClient->getRandomGif($searchQuery);
-				$this->keybaseAPIClient->uploadAttachment($message->getChannel(), $randomGifPath, $searchQuery);
-				unlink($randomGifPath);
-			}
-			catch (NoSearchResultsFoundException $e) {
-				$this->keybaseAPIClient->sendMessage($message->getChannel(), $e->getMessage());
-			}
+		$searchQuery = $message->getBody();
+		try {
+			$randomGifPath = $this->giphyAPIClient->getRandomGif($searchQuery);
+			$this->keybaseAPIClient->uploadAttachment($message->getChannel(), $randomGifPath, $searchQuery);
+			unlink($randomGifPath);
+		}
+		catch (NoSearchResultsFoundException $e) {
+			$this->keybaseAPIClient->sendMessage($message->getChannel(), $e->getMessage());
 		}
 	}
 }
