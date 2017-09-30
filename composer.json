@@ -1,0 +1,13 @@
+{
+    "name": "timstrijdhorst/capetown-giphy-command",
+    "description": "Giphy Command for Capetown Keybase.io Bot Framework",
+    "type": "plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tim Strijdhorst",
+            "email": "tim@decorrespondent.nl"
+        }
+    ],
+    "require": {}
+}
