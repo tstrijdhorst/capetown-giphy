@@ -4,6 +4,7 @@ namespace Capetown\Commands\Giphy;
 
 use Capetown\Core\CommandInterface;
 use Capetown\Core\KeybaseAPIClient;
+use Capetown\Core\Message;
 
 class GiphyCommand implements CommandInterface {
 	
@@ -29,19 +30,17 @@ class GiphyCommand implements CommandInterface {
 		return 'giphy';
 	}
 	
-	public function handleMessages(array $messages): void {
-		foreach ($messages as $message) {
-			if (substr($message->getBody(), 0, 7) === '/giphy ') {
-				$searchQuery = substr($message->getBody(), 7);
-				
-				try {
-					$randomGifPath = $this->giphyAPIClient->getRandomGif($searchQuery);
-					$this->keybaseAPIClient->uploadAttachment($message->getChannel(), $randomGifPath, $searchQuery);
-					unlink($randomGifPath);
-				}
-				catch (NoSearchResultsFoundException $e) {
-					$this->keybaseAPIClient->sendMessage($message->getChannel(), $e->getMessage());
-				}
+	public function handleMessage(Message $message): void {
+		if (substr($message->getBody(), 0, 7) === '/giphy ') {
+			$searchQuery = substr($message->getBody(), 7);
+			
+			try {
+				$randomGifPath = $this->giphyAPIClient->getRandomGif($searchQuery);
+				$this->keybaseAPIClient->uploadAttachment($message->getChannel(), $randomGifPath, $searchQuery);
+				unlink($randomGifPath);
+			}
+			catch (NoSearchResultsFoundException $e) {
+				$this->keybaseAPIClient->sendMessage($message->getChannel(), $e->getMessage());
 			}
 		}
 	}
