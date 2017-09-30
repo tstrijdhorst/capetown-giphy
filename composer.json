@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Capetown\\Commands\\Giphy\\": "app/"
+      "Capetown\\Commands\\Giphy\\": "src/"
     }
   }
 }
