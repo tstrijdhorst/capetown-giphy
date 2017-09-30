@@ -1,6 +1,6 @@
 <?php
 
-namespace CapetownGiphyCommand\Plugins\Giphy;
+namespace Capetown\Commands\Giphy;
 
 use Throwable;
 

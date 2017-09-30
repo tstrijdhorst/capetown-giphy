@@ -12,12 +12,12 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "capetown/capetown": "dev-master",
+    "capetown/core": "dev-master",
     "vlucas/phpdotenv": "^2.4"
   },
   "autoload": {
     "psr-4": {
-      "CapetownGiphyCommand\\": "app/"
+      "Capetown\\Commands\\Giphy\\": "app/"
     }
   }
 }
