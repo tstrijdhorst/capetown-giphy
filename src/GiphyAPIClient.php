@@ -1,6 +1,6 @@
 <?php
 
-namespace Capetown\Plugins\Giphy;
+namespace CapetownGiphyCommand\Plugins\Giphy;
 
 class GiphyAPIClient {
 	private const DOWNLOADDIR = __DIR__.'/temp/gifs/';
