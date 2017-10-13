@@ -3,13 +3,17 @@
 namespace Capetown\Commands\Giphy;
 
 class GiphyAPIClient {
-	private const DOWNLOADDIR = __DIR__.'/temp/gifs/';
+	private const DOWNLOADDIR = __DIR__.'/../temp/gifs';
 	/**
 	 * @var string
 	 */
 	private $apiKey;
 	
 	public function __construct(string $apiKey) {
+		if (empty($apiKey)) {
+			throw new \Exception('API key cannot be empty');
+		}
+		
 		$this->apiKey = $apiKey;
 	}
 	
